@@ -16,13 +16,19 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import { CategoryService } from './category.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NewCategoryComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    EditCategoryComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,7 @@ import { CategoriesComponent } from './categories/categories.component';
     MatTooltipModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

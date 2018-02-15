@@ -6,7 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  title = 'Progressive Web Apps';
+
+  categories = [
+    {
+      id: 1,
+      title : 'Progressive Web Apps'
+    },
+    {
+      id: 2,
+      title : 'Progressive Web Apps'
+    },
+    {
+      id: 3,
+      title : 'Progressive Web Apps'
+    }
+  ];
 
   constructor() { }
 
