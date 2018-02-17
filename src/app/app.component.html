@@ -1,14 +1,18 @@
 <mat-toolbar color="primary" style="margin-bottom:5px;">
   <span>{{title}}</span>
   <span class="example-fill-remaining-space"></span>
+  <button mat-icon-button routerLink="/">
+      <mat-icon>home</mat-icon>
+  </button>
   <button mat-icon-button [matMenuTriggerFor]="appMenu">
     <mat-icon>more_vert</mat-icon>
+  </button>
+  <button mat-icon-button routerLink="/new">
+    <mat-icon>add</mat-icon>
   </button>
 </mat-toolbar>
 
 <mat-menu #appMenu="matMenu">
-  <button mat-menu-item routerLink="/">Home</button>
-  <button mat-menu-item routerLink="/new">New</button>
   <button mat-menu-item>Settings</button>
   <button mat-menu-item>Help</button>
 </mat-menu>

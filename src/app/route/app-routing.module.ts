@@ -1,11 +1,11 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CategoriesComponent } from './categories/categories.component';
-import { NewCategoryComponent } from './new-category/new-category.component';
-import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { CategoriesComponent } from '../categories/categories.component';
+import { NewCategoryComponent } from '../new-category/new-category.component';
+import { EditCategoryComponent } from '../edit-category/edit-category.component';
 
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: CategoriesComponent },
