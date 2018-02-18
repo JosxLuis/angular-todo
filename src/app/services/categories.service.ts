@@ -5,4 +5,23 @@ export class CategoriesService {
 
   constructor() { }
 
+  getAll(){
+
+  }
+
+  getById(){
+
+  }
+
+  create(){
+
+  }
+
+  update(){
+
+  }
+
+  delete(){
+    
+  }
 }
