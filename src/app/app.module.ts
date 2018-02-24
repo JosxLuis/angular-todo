@@ -5,17 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { 
-  MatButtonModule,
-  MatCardModule,
-  MatMenuModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatTooltipModule,
-  MatInputModule,
-  MatFormFieldModule,
-  MatGridListModule } from '@angular/material';
+import {AngularMaterialModule} from './angular-material.module';
 
 import { AppComponent } from './app.component';
 
@@ -43,15 +33,7 @@ import { CategoriesService } from './services/categories.service';
     FormsModule,
     HttpModule,
     HttpClientModule,
-    MatButtonModule,
-    MatCardModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatGridListModule,
+    AngularMaterialModule,
     AppRoutingModule
   ],
   providers: [CategoriesService],
