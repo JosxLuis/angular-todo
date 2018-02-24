@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriesService } from '../services/categories.service';
 
 @Component({
   selector: 'app-categories',
@@ -6,25 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
+ 
+  categories: any;
 
-  categories = [
-    {
-      id: 1,
-      title : 'Progressive Web Apps'
-    },
-    {
-      id: 2,
-      title : 'Progressive Web Apps'
-    },
-    {
-      id: 3,
-      title : 'Progressive Web Apps'
-    }
-  ];
-
-  constructor() { }
+  constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit() {
+    this.getCategories();
+  }
+
+  getCategories(): void{
+    this.categoriesService.getAll().subscribe(result => {
+      console.log(result);
+      let categories = result.data;
+      this.categories = categories;
+    });
   }
 
 }

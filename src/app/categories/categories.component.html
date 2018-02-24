@@ -1,5 +1,5 @@
 <mat-card *ngFor="let item of categories"  style="margin-bottom:5px;">
-    {{item.title}}
+    {{item.name}}
     <mat-card-actions style="text-align:right;">
       <button mat-icon-button [routerLink]="['/edit', item.id]">
         <span matTooltip="Edit">

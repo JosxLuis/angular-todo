@@ -12,4 +12,7 @@ export class NewCategoryComponent implements OnInit {
   ngOnInit() {
   }
 
+  create(): void{
+    
+  }
 }
