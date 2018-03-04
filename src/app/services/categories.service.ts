@@ -7,7 +7,7 @@ interface Category {};
 @Injectable()
 export class CategoriesService {
 
-  private api = 'http://localhost:4000/api/v1/';
+  private api = 'http://localhost:4000/api/v1';
 
   private categories: Category[];
 
@@ -17,16 +17,16 @@ export class CategoriesService {
     return this.http.get<Category[]>(`${this.api}/categories`);
   }
 
-  getById(){
-
+  getById(id): Observable<Category[]>{
+    return this.http.get<Category[]>(`${this.api}/categories/${id}`);
   }
 
   create(){
 
   }
 
-  update(){
-
+  update(categories): Observable<Category[]>{
+    return this.http.put<Category[]>(`${this.api}/categories`, categories);
   }
 
   delete(){

@@ -1,8 +1,9 @@
 <mat-card>
     <div class="example-container"> 
       <mat-form-field>
-          <input matInput placeholder="Category:">
+          <input matInput placeholder="Category:" [(ngModel)]="categories.name" #ctrl="ngModel" required>
         </mat-form-field>
-      <button mat-raised-button color="primary">Edit</button>
+        <p>Valid: {{ ctrl.valid }}</p>
+      <button mat-raised-button color="primary" [disabled]="ctrl.invalid" (click)="updated()">Edit</button>
     </div>
 </mat-card>

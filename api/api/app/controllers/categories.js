@@ -6,7 +6,7 @@ export let getCategories = (req, res, next) => {
 	Categories.forge().query('where', 'deleted', '=', '0').fetch({columns: ['id', 'name']}).then((collection) => {
 		res.json({
 			result : true,
-			message: 'Categoría obtenida.',
+			message: 'Categorías obtenidas.',
 			data : collection
 		})
 	}).catch((err) => {
@@ -21,14 +21,14 @@ export let getCategoryById = (req, res, next) => {
 	Category.forge({ id : req.params.id}).query('where', 'deleted', '=', '0').fetch().then((category) => {
 		if(!category){
 			res.status(404).json({
-				result : true,
-				message: 'Categoría obtenida.',
-				data : category
+				result : false,
+				message : 'no se encontro' 
 			})
 		}else{
 			res.json({
-				result : false,
-				message : err.message 
+				result : true,
+				message: 'Categoría obtenida.',
+				data : category
 			})
 		}
 	}).catch((err) => {
@@ -59,7 +59,7 @@ export let saveCategory = (req, res, next) => {
 };
 
 export let updateCategory = (req, res, next) => {
-	Category.forge({ id : req.params.id }).fetch({ require : true }).then((category) => {
+	Category.forge({ id : req.body.id }).fetch({ require : true }).then((category) => {
 		category.save({
 			name : req.body.name || category.get('name')
 		}).then(() => {
