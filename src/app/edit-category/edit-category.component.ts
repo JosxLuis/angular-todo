@@ -28,6 +28,9 @@ export class EditCategoryComponent implements OnInit {
   updated():void {
     this.categoriesService.update(this.categories).subscribe(categories => {
       console.log(categories);
+      if(categories['result']){
+        this.router.navigate(['/']);
+      }
     },(error) =>{
       console.log(error);
     });
