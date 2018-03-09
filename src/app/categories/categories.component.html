@@ -1,4 +1,4 @@
-<mat-card *ngFor="let item of categories"  style="margin-bottom:5px;">
+<mat-card *ngFor="let item of categories; let i = index"  style="margin-bottom:5px;">
     {{item.name}}
     <mat-card-actions style="text-align:right;">
       <button mat-icon-button [routerLink]="['/edit', item.id]">
@@ -6,10 +6,22 @@
             <mat-icon>edit</mat-icon>
         </span>
       </button>
+  
       <button mat-icon-button>
-          <span matTooltip="Delete">
+          <span matTooltip="Delete" [swal]="deleteSwal">
               <mat-icon>delete</mat-icon>
           </span>
-      </button>        
+      </button>    
+
+      <swal
+        #deleteSwal
+        title="Delete {{ item.name }}?"
+        text="This cannot be undone"
+        type="question"
+        [showCancelButton]="true"
+        [focusCancel]="true"
+        (confirm)="delete(item, i)">
+        </swal>
+
     </mat-card-actions>
 </mat-card>

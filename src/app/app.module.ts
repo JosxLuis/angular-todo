@@ -5,7 +5,9 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {AngularMaterialModule} from './angular-material.module';
+import { AngularMaterialModule } from './angular-material.module';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 
@@ -34,7 +36,9 @@ import { CategoriesService } from './services/categories.service';
     HttpModule,
     HttpClientModule,
     AngularMaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SweetAlert2Module.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [CategoriesService],
   bootstrap: [AppComponent]

@@ -92,8 +92,7 @@ export let deleteCategory = (req, res, next) => {
 		.then(() => {
 			res.json({
 				result : true,
-				message: 'Categoría eliminado.',
-				data : {}
+				message: 'Categoría eliminada.',
 			})
 		})
 		.catch((err) => {

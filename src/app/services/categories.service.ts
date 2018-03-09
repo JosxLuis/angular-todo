@@ -29,7 +29,7 @@ export class CategoriesService {
     return this.http.put<Category[]>(`${this.api}/categories`, categories);
   }
 
-  delete(){
-    
+  delete(category): Observable<Category[]>{
+    return this.http.delete<Category[]>(`${this.api}/categories/${category.id}`);
   }
 }

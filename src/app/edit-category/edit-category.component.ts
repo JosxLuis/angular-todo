@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { CategoriesService } from '../services/categories.service';
 import {NgForm} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-category',
@@ -15,7 +16,8 @@ export class EditCategoryComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private categoriesService: CategoriesService) { }
+    private categoriesService: CategoriesService,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
     this.categoriesService.getById(this.route.snapshot.paramMap.get('id')).subscribe(categories => {
@@ -27,8 +29,8 @@ export class EditCategoryComponent implements OnInit {
 
   updated():void {
     this.categoriesService.update(this.categories).subscribe(categories => {
-      console.log(categories);
       if(categories['result']){
+        this.toastr.success('Category edited!');
         this.router.navigate(['/']);
       }
     },(error) =>{
