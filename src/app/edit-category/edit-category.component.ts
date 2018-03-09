@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { CategoriesService } from '../services/categories.service';
-import {NgForm} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

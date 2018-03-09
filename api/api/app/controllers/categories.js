@@ -42,10 +42,6 @@ export let getCategoryById = (req, res, next) => {
 export let saveCategory = (req, res, next) => {
 	Category.forge({name : req.body.name}).save().then((category) => {
 		res.json({
-			/*data : {
-				id : category.get('id'),
-				name: category.get('name')
-			}*/
 			result : true,
 			message: 'Categoría creada.',
 			data : category
